@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBPersonelsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Personels">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelAd" Type="nchar" MaxLength="50" />
+          <Property Name="PersonelSoyad" Type="nchar" MaxLength="50" />
+          <Property Name="PersonelSehir" Type="nchar" MaxLength="50" />
+          <Property Name="PersonelMaas" Type="int" />
+          <Property Name="PersonelDurum" Type="bit" />
+          <Property Name="PerYas" Type="int" />
+        </EntityType>
+        <EntityContainer Name="DBPersonelsModelStoreContainer">
+          <EntitySet Name="Tbl_Personels" EntityType="Self.Tbl_Personels" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBPersonelsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Personels">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelAd" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PersonelSoyad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PersonelSehir" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PersonelMaas" Type="Int32" />
+          <Property Name="PersonelDurum" Type="Boolean" />
+          <Property Name="PerYas" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="DBPersonelsEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Personels" EntityType="Self.Tbl_Personels" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBPersonelsModelStoreContainer" CdmEntityContainer="DBPersonelsEntities2">
+          <EntitySetMapping Name="Tbl_Personels">
+            <EntityTypeMapping TypeName="DBPersonelsModel.Tbl_Personels">
+              <MappingFragment StoreEntitySet="Tbl_Personels">
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="PersonelAd" ColumnName="PersonelAd" />
+                <ScalarProperty Name="PersonelSoyad" ColumnName="PersonelSoyad" />
+                <ScalarProperty Name="PersonelSehir" ColumnName="PersonelSehir" />
+                <ScalarProperty Name="PersonelMaas" ColumnName="PersonelMaas" />
+                <ScalarProperty Name="PersonelDurum" ColumnName="PersonelDurum" />
+                <ScalarProperty Name="PerYas" ColumnName="PerYas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
